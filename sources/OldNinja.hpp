@@ -10,6 +10,6 @@ namespace ariel
         // by initializing both the OldNinja part
         // and the base class Ninja part using the given name,
         // location, and default values for HP and speed.
-        OldNinja(string name, Point location) : Ninja(std::move(name), location, 150, 8) {}
+        OldNinja(string name, const Point &location) : Ninja(std::move(name), location, 150, 8) {}
     };
 }

@@ -1,3 +1,6 @@
+#include <iostream>
+#include <string>
+#include <stdexcept>
 #include "Character.hpp"
 #include "Ninja.hpp"
 #include "Cowboy.hpp"

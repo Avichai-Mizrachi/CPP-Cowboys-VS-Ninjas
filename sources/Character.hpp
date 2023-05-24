@@ -13,13 +13,11 @@ namespace ariel
 {
     class Character{
 
-        private:
+        public:
             Point location;
             int health;
             string name;
             bool gotATeam;
-
-        public:
             Character(const string &name, const Point &location, int health);
             Character(const Character &other);
             Character(Character &&other) noexcept;

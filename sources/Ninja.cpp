@@ -1,6 +1,8 @@
 #include "Ninja.hpp"
 #include "Character.hpp"
 #include "Point.hpp"
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -41,6 +43,16 @@ namespace ariel
         {
             other->hit(40);
         }
+    }
+
+    void Ninja::attack(Character *other)
+    {
+        if (!isAlive() || !other->isAlive())
+            return;
+        if (distance(other) <= 1)
+            slash(other);
+        else
+            move(other);
     }
 
     string Ninja ::print()

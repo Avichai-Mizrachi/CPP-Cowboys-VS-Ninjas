@@ -1,5 +1,7 @@
 #include "Cowboy.hpp"
 #include "Character.hpp"
+#include <string>
+#include <iostream>
 
 using namespace std;
 

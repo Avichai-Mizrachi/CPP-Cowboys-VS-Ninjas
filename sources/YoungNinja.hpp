@@ -6,7 +6,7 @@ namespace ariel
     class YoungNinja : public Ninja
     {
     public:
-                // This constructor allows the creation of a YoungNinja object
+        // This constructor allows the creation of a YoungNinja object
         // by initializing both the YoungNinja part
         // and the base class Ninja part using the given name,
         // location, and default values for HP and speed.
