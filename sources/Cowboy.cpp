@@ -8,8 +8,10 @@ using namespace std;
 namespace ariel
 {
     // Cowboy functions
+    // Constructor
     Cowboy::Cowboy(string name, Point location) : Character(name, location, 110), numOfBullets(6) {}
 
+    // Check if the cowboy still have bullets
     bool Cowboy::hasboolets()
     {
         if (this->numOfBullets > 0)
@@ -19,6 +21,7 @@ namespace ariel
         return false;
     }
 
+    // Reload the gun
     void Cowboy::reload()
     {
         if (this->isAlive() == false)
@@ -28,6 +31,7 @@ namespace ariel
         this->numOfBullets = 6;
     }
 
+    // Shoot the enemy
     void Cowboy::shoot(Character *enemy)
     {
         if (this->isAlive() == false)
@@ -49,6 +53,7 @@ namespace ariel
         }
     }
 
+    // Attacking and enemy by using the shoot method
     void Cowboy::attack(Character *enemy)
     {
         if (isAlive() == false || enemy->isAlive() == false)
@@ -59,6 +64,7 @@ namespace ariel
             reload();
     }
 
+    // Return the cowboy details
     string Cowboy::print()
     {
         string name = "Character name is :" + this->getName();

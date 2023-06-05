@@ -9,7 +9,7 @@ using namespace std;
 
 namespace ariel
 {
-
+    // Constructors
     Character::Character(const string &name, const Point &location, int health) : name(name), location(location), health(health), gotATeam(false) {}
 
     Character::Character(const Character &other) : name(other.name), location(other.location), health(other.health), gotATeam(other.gotATeam) {}
@@ -46,6 +46,7 @@ namespace ariel
         return *this;
     }
 
+    // Calculates the distance between two characters
     double Character::distance(Character *other)
     {
         if (other == nullptr)
@@ -57,11 +58,13 @@ namespace ariel
         return this->getLocation().distance(otherPoint);
     }
 
+    // Check if the character is still alive
     bool Character::isAlive()
     {
         return (health > 0);
     }
 
+    // Hit the enemy
     void Character::hit(int damage)
     {
         if (damage < 0)

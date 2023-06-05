@@ -3,15 +3,21 @@
 namespace ariel
 {
     Point::Point(double x, double y) : x(x), y(y) {}
+
+    // Calculates the distance between two points
     double Point::distance(Point other)
     {
         double distance = sqrt(pow((this->getX()) - (other.getX()), 2) + pow((this->getY()) - (other.getY()), 2));
         return distance;
     }
+
+    // Print the point
     string Point::print()
     {
         return "(" + to_string(x) + " , " + to_string(y) + ")";
     }
+
+    // Moving toward another point (enemy point)
     Point Point::moveTowards(Point &original, Point &target, double distance)
     {
         // In case the distance is negative

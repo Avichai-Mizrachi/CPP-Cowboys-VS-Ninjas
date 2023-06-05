@@ -5,7 +5,7 @@ using namespace std;
 
 namespace ariel
 {
-
+    //Constructors
     Team::Team(Character *leader) : leader(leader)
     {
         if (leader->inTeam())
@@ -38,6 +38,7 @@ namespace ariel
         return *this;
     }
 
+    // Check if there is someone alive in the team
     int Team::stillAlive()
     {
         int counter = 0;
@@ -47,6 +48,7 @@ namespace ariel
         return counter;
     }
 
+    // Attack the enemy team
     void Team::attack(Team *other)
     {
         if (!other)
@@ -85,6 +87,7 @@ namespace ariel
         }
     }
 
+    // Checking who is the closest enemy nearby the leader
     Character *Team::closest(vector<Character *> &other, const Point &)
     {
         double minDistance = DBL_MAX;
@@ -98,12 +101,14 @@ namespace ariel
         return result;
     }
 
+    // Print the team details
     void Team::print() const
     {
         for (Character *member : team)
             cout << member->print() << endl;
     }
 
+    // Add character to the team
     void Team::add(Character *newChar)
     {
         if (newChar != nullptr && newChar->isAlive() && !newChar->inTeam() && team.size() < 10)

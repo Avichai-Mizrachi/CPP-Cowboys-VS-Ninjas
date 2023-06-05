@@ -9,8 +9,10 @@ using namespace std;
 namespace ariel
 {
     // General ninja functions
+    // Constructor
     Ninja ::Ninja(string name, const Point &location, int health, int speed) : Character(name, location, health), speed(speed) {}
 
+    // Moving the ninja toward the enemy
     void Ninja ::move(Character *enemy)
     {
         if (isAlive() == false)
@@ -23,6 +25,7 @@ namespace ariel
         this->setLocation(temp);
     }
 
+    // Slash the enemy
     void Ninja ::slash(Character *other)
     {
         if (isAlive() == false)
@@ -45,6 +48,7 @@ namespace ariel
         }
     }
 
+    // Attack the enemy by using the "slash" method
     void Ninja::attack(Character *other)
     {
         if (!isAlive() || !other->isAlive())
@@ -55,6 +59,7 @@ namespace ariel
             move(other);
     }
 
+    // Return the ninja details
     string Ninja ::print()
     {
         string name = "Character name is :" + this->getName();
